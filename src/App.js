@@ -5,13 +5,12 @@ import axios from "axios";
 function App() {
   const [territory, setTerritory] = useState([]);
   const [name, setName] = useState("");
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = 'https://me820iaad6.execute-api.us-east-2.amazonaws.com';
 
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(API_URL + "/lab2Stage/territories")
       setTerritory(response.data);
-      console.log(API_URL)
       return response;
     }
     fetchData();
